@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Hacker News Top 100
+1. Выполнить в директории проекта
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Для запуска в режиме разработки выполнить
+
+```bash
+npm run dev
+```
+
+## Результат
+Создано [приложение](https://vk.com/app51914663#/) в VK-Mini-Apps(идентификатор приложения: id = 51914663).
+
+На главной странице отображаются 100 релевантных новостей с Hacker News, здесь вид из приложения:
+
+![Внешний вид](https://sun9-77.userapi.com/impg/YcKA0MvF13d6N07NwkQTDib4JP2YpKy3GUsWkA/f8M2wQ5V2qU.jpg?size=1376x835&quality=96&sign=6d848e8e173d21865e99067efa75ba19&type=album)
+Вид с сайта:
+
+![Внешний вид](https://sun9-72.userapi.com/impg/QQGOjmTrk5ixX7BRqoRXya0hG18aihG03cFc7g/EpR791r6rfs.jpg?size=1662x907&quality=96&sign=0ffce53d128943aa82efd2f613d6347c&type=album)
+При наведении на кнопки происходит анимация подсвечивания, при наведении на новость также происходит анимация(все анимации прописаны в файлах со стилями). Список новостей автоматически обновляется каджые 60 секунд(но также есть кнопка принудительного обновления новостей). У каждой новости предоставлено описание в виде названия, рейтинга, автора и даты публикации. Нажав на кнопку читать далее, пользователь переходит на страницу новости(навигация сделана при помощи createBrowserRouter). Вот страница с нововстью:
+
+![Внешний вид](https://sun9-29.userapi.com/impg/qkOpcqUY_AyI4acLGUMf6fiE8uEDZyWIg_ZHzQ/d-bxPolpokg.jpg?size=1827x920&quality=96&sign=d82c4572392e5f6e203aadafeb1354ad&type=album)
+
+Из функционала предоставлена кнопка обновления списка комментариев(с анимацией), также есть кнопка для возврата на страницу со всеми новостями. Новость представляет из себя непосредственно ссылку на новость, автора новости, даты публикации и количества комментариев. Далее идет список всех комментариев:
+
+![Внешний вид](https://sun9-17.userapi.com/impg/d8GPvi5Ox83dOEpra5KkAnkrJ1LwPI22XBbOZw/GC0V4tcKcFA.jpg?size=1842x893&quality=96&sign=21ed105b06161ebd6b035e69e4d9bf3d&type=album)
+
+У каждого комментария показан автор и текст комментария, при этом у тех комментариев, у которых есть вложенные комментарии, есть кнопка еще, нажав на которую пользователь видит список вложенных комментариев:
+
+![Внешний вид](https://sun1-16.userapi.com/impg/hBE129an56vVWFENeahH0fav-1JEHS7Fuy5Xfw/5YLRNeBEiOU.jpg?size=1847x780&quality=96&sign=db7bafdd0bf6006e0ae06226f4dc8f0d&type=album)
+
+
